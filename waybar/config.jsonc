@@ -1,0 +1,67 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 24,
+  "reload_style_on_change": true,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": [],
+  "modules-right": ["network" ,"battery", "backlight",  "pulseaudio", "bluetooth", "clock"],
+  "hyprland/workspaces": {
+	"format": "{name}: {icon}",
+	"format-icons": {
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "",
+	},
+       "persistent-workspaces": {
+             "*": 4, // 4 workspaces by default on every monitor
+       }
+},
+  "network": {
+    "interface": "wlan0",
+	  "tooltip-format-wifi": "Network SSID: {essid}\nDownload: {bandwidthDownBytes} ↓\nUpload: {bandwidthUpBytes} ↑\nAddress: {ipaddr}{gwaddr} / {cidr}\nSignal Strength: {signalStrength}",
+	  "format-disconnected": "", //An empty format will hide the module.
+	  "format-wifi": "",
+	  "max-length": 50,
+	  "interval": 1,
+    "on-click": "exec alacritty -e sudo iwctl"
+},
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+	  "format-muted": "🔇",
+	  "format-icons": {
+      "headphone": "🎧",
+	    "hands-free": "🎧",
+	    "headset":"🎧",
+	    "default": ["🔈", "🔉", "🔊"]
+},
+    "on-click": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"]
+},
+  "bluetooth": {
+    "format": "",
+	  "format-disabled": "", // an empty format will hide the module
+	  "format-connected": " ✓",
+    "tooltip": false,
+	  "on-click": "exec blueman-manager"
+},
+  "battery": {
+    "format": "{icon}",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "Power Draw: {power}W",
+    "interval": 1
+},
+  "backlight": {
+    "format": "{icon}",
+    "format-icons": ["🌑", "🌒", "🌓","🌔", "🌕"],
+    "tooltip": false
+},
+  "clock": {
+    "tooltip": false,
+    "format": "{:%I:%M %p}",
+    "interval": 1,
+    "timezone": "America/Chicago"
+}
+}

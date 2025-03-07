@@ -1,0 +1,76 @@
+* {
+  font-family: "commitmono";
+  font-size: 16px;
+}
+
+.modules-left {
+  border: solid white 4px;
+  border-radius: 16px;
+  margin: 8px;
+}
+
+.modules-right {
+  border: solid white 4px;
+  border-radius: 16px;
+  margin: 8px;
+  padding: 8px;
+}
+
+window#waybar {
+	background-color: transparent;
+}
+
+window#waybar.active {
+  transition-duration: 1s;
+}
+
+#workspaces button {
+  color: white;
+  padding-right: 20px;
+}
+
+#workspaces button.active {
+  animation-name: btnFade;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+#workspaces button:hover {
+  color: black;
+}
+
+#battery {
+    color: white;
+    padding-right: 8px;
+    margin-left: -4px;
+}
+
+#network {
+  color: white;
+  padding-right: 12px;
+}
+
+#bluetooth {
+  color: white;
+}
+
+#clock {
+  color: white;
+}
+
+@keyframes btnFade {
+  0% {
+    background-color: white;
+    color: black;
+  }
+
+  50% {
+    background-color: transparent;
+    color: white;
+  }
+
+  100% {
+    background-color: white;
+    color: black;
+  }
+}
